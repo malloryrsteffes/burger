@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1>Eat Da Burger!</h1>
+    </div>
+
+    <!-- Burgers Ready to Eat -->
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group">
+                {{#each burgers}}
+                {{#unless this.devoured}}
+                <li class="list-group-item">
+                    <p>{{this.burger_name}}</p>
+                </li>
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <!-- Burgers Eaten-->
+    <div class="row">
+        <div class="col-md-4">
+            <ul class="list-group">
+                {{#each burgers}}
+                {{#if this.devoured}}
+                <li class="list-group-item">
+                    <p>{{this.burger_name}}</p>
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-10">
+        <p>Add a Burger</p>
+        <form class="create-form">
+
+            <div class="form-group">
+                <label for="ca">Burger Name:</label>
+                <input type="text" id="ca" name="name">
+            </div>
+            <button type="submit">Add Cat</button>
+        </form>
+    </div>
+</div>
