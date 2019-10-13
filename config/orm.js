@@ -2,6 +2,11 @@
 var connection = require("../config/connection.js");
 
 // Helper functions for mySQL syntax
+// Let's say we want to pass 3 values into the mySQL query.
+// In order to write the query, we need 3 question marks.
+// The above helper function loops through and creates an array of question marks - ["?", "?", "?"] - and turns it into a string.
+// ["?", "?", "?"].toString() => "?,?,?";
+
 function printQuestionMarks(num) {
     var arr = [];
   
@@ -47,6 +52,7 @@ var orm = {
           cb(result);
         });
       },
+    // Create a burger
     insertOne: function(table, cols, vals, cb){
         var queryString = "INSERT INTO " + table;
 
@@ -66,6 +72,7 @@ var orm = {
         cb(result);
         });
     },
+    // Update a burger to eaten
     updateOne: function(table, objColVals, condition, cb) {
         var queryString = "UPDATE " + table;
     

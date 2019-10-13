@@ -1,6 +1,9 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
 
+//Read and set any environment variables with the dotenv package.
+require("dotenv").config();
+
 var connection;
 
 // if the server contains the JAWSDB_URL environmental variable (saved by Heroku), it connects
