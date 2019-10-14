@@ -2,6 +2,8 @@ body{
 	background-image: url(../img/2959460.jpg);
 	background-size: cover;
 	text-align: center;
+	font-family: 'Noto Sans JP', sans-serif;
+
 }
 
 .jumbotron{
@@ -9,9 +11,16 @@ body{
     background-position: center;
 }
 
+
 h1{
 	color: black;
 
+}
+
+#mainContainer {
+	padding: 10px;
+	background: rgba(255, 255, 211, .5);
+	margin-bottom: 200px;
 }
 
 li {
@@ -21,11 +30,17 @@ li {
   }
 
 .create-form {
-padding: 5px;
-margin: 5px;
-background: gray;
+padding: 10px;
+margin: 25px;
+background-color: white;
+
 }
 
 .form-group {
 margin-bottom: 5px;
+}
+
+.footer {
+	background: rgba(211, 211, 211, .5);
+	padding: 15px;
 }
