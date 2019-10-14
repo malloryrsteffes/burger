@@ -1,19 +1,19 @@
 <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron text-center">
         <h1>Eat Da Burger!</h1>
     </div>
 
     <!-- Burgers Ready to Eat -->
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 offset-1">
             <h4>Now Serving:</h4>
             <ul class="list-group">
                 {{#each burgers}}
                 {{#unless this.devoured}}
                 <li class="list-group-item">
-                    <p>{{this.burger_name}}</p>
                     <form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
-                        <button class="eat-burger btn btn-default btn-lg" data-id="{{id}}" data-newdevour="{{devour}}"
+                     <p>{{this.burger_name}}</p>
+                        <button class="eat-burger btn btn-primary" data-id="{{id}}" data-newdevour="{{devour}}"
                             type="submit">Eat it!</button>
                     </form>
                 </li>
@@ -25,8 +25,8 @@
 
         <!-- Burgers Eaten-->
 
-        <div class="col-md-4 offset-3">
-            <h4>Eaten:</h4>
+        <div class="col-md-4 offset-2">
+            <h4>Burgers Eaten:</h4>
 
             <ul class="list-group">
                 {{#each burgers}}
@@ -39,16 +39,17 @@
             </ul>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-6 offset-3">
 
-    <div class="col-md-6 offset-3">
-        
-        <form class="create-form">
-            <p>Add a Burger</p>
-            <div class="form-group">
-                <label for="burgerName">Burger Name:</label>
-                <input type="text" id="burgerName" name="name">
-            </div>
-            <button class="btn" type="submit">Add Burger</button>
-        </form>
+            <form class="create-form">
+                <p class="lead">Add a Burger</p>
+                <div class="form-group">
+                    <label for="burgerName">Name:</label>
+                    <input type="text" id="burgerName" name="name">
+                </div>
+                <button class="btn btn-success" type="submit">Add Burger</button>
+            </form>
+        </div>
     </div>
 </div>

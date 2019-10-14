@@ -1,16 +1,17 @@
 body{
-	background-color: orange;
+	background-image: url(../img/2959460.jpg);
+	background-size: cover;
 	text-align: center;
 }
 
 .jumbotron{
-	background-color: grey;
-	color: white;
+    background-color: #FBED46;
+    background-position: center;
 }
 
 h1{
 	color: black;
-	font-size: 20px;
+
 }
 
 li {
@@ -22,7 +23,7 @@ li {
 .create-form {
 padding: 5px;
 margin: 5px;
-background: aqua;
+background: gray;
 }
 
 .form-group {
