@@ -1,18 +1,18 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
 
-//Read and set any environment variables with the dotenv package.
-require("dotenv").config();
+// //Read and set any environment variables with the dotenv package.
+// require("dotenv").config();
 
 var connection;
 
 // if the server contains the JAWSDB_URL environmental variable (saved by Heroku), it connects
 // // to the JawsDB database
-// if (process.env.JAWSDB_URL){
-//   connection = mysql.createConnection(process.env.JAWSDB_URL);
-// } 
+if (process.env.JAWSDB_URL){
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} 
 // if the server lacks the variable, it falls back on the explicitly defined local db
-// else {
+else {
   connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
@@ -20,7 +20,7 @@ var connection;
     password: "root1234",
     database: "burgers_db"
   });
-// };
+};
 console.log(connection);
 
 // Make connection.

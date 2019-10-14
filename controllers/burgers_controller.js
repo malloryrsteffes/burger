@@ -7,9 +7,9 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 
-router.get("/", function(req,res){
-	res.redirect("burgers")
-});
+// router.get("/", function(req,res){
+// 	res.redirect("burgers")
+// });
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res){
@@ -24,13 +24,13 @@ router.get("/", function(req, res){
 
 router.post("/api/burgers", function(req, res) {
     burger.insertOne([
-        "burger_name"
+        "burger_name", "devoured"
     ], [
-        req.body.burger_name,
-    ], function(data){
+        req.body.burger_name, req.body.devoured
+    ], function(result){
         // Send back the ID of the new burger
-        res.redirect("/burgers")
-    });
+    res.json({id: result.insertID})    
+});
 })
 
 router.put("/api/burgers/:id", function(req, res) {
