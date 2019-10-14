@@ -13,8 +13,11 @@
                     <li class="list-group-item">
                         <form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
                             <p class="lead">{{this.burger_name}}</p>
-                            <button class="eat-burger btn btn-primary" data-id="{{id}}" data-newdevour="{{devour}}"
-                                type="submit">Eat it!</button>
+                            <button class="eat-burger btn btn-lg btn-primary" data-id="{{id}}"
+                                data-newdevour="{{devour}}" type="submit">
+                                <img src="https://webstockreview.net/images/clipart-food-11.png" width="25px"
+                                    height="25px" class="mr-2">
+                                Eat it!</button>
                         </form>
                     </li>
                     {{/unless}}
@@ -32,7 +35,7 @@
                     {{#each burgers}}
                     {{#if this.devoured}}
                     <li class="list-group-item">
-                        <p>{{this.burger_name}}</p>
+                        <p class="lead">{{this.burger_name}}</p>
                     </li>
                     {{/if}}
                     {{/each}}
@@ -48,18 +51,21 @@
                         <label for="burgerName">Name:</label>
                         <input type="text" id="burgerName" name="name" required>
                     </div>
-                    <button class="btn btn-success" type="submit">Add Burger</button>
+                    <button class="btn btn-success" type="submit">
+                        <img src="https://webstockreview.net/images/clipart-food-11.png" width="25px" height="25px"
+                            class="mr-2">
+                        Add Burger</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-  <div class="footer text-center">
-        <div class="row">
-            <div class="col-4 offset-4">
-                <h6>App made with MySQL, Node, Express, Handlebars and a homemade ORM.</h6>
-                <h6>© 2019 Mallory Steffes.</h6> 
-                <a href="https://github.com/malloryrsteffes/burger" target="_blank">Github Repo</a>
-            </div>
+<div class="footer text-center">
+    <div class="row">
+        <div class="col-4 offset-4">
+            <h6>App made with MySQL, Node, Express, Handlebars and a homemade ORM.</h6>
+            <h6>© 2019 Mallory Steffes.</h6>
+            <a href="https://github.com/malloryrsteffes/burger" target="_blank">Github Repo</a>
         </div>
     </div>
+</div>
