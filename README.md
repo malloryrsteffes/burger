@@ -12,7 +12,7 @@ This is a simple full-stack app. Its front-end utilizes HTML, CSS, and the Boots
 
 Users can view all available burgers, or add a burger of their own. They can choose to eat a burger, and the burger will be moved from the "Now Serving" section to the "Burgers Eaten" section. The burgers are also added and updated in a mySQL database.
 
-## MVC Design Patter
+## MVC Design Pattern
 Eat Da Burger is an MVC app, which means it assigns objects in the application to one of the three listed roles (model, view, or controller), then defines the ways that the different parts of the application interact with each another. 
 - <b>The View:</b>
 The View Object defines what the user sees. It displays data on the front-end from the app's Model, and updates that data via any news from the Controller. User input into the View is sent via the Controller to the Model.
@@ -22,6 +22,12 @@ The Controller Object transfers data between the View and the Model. Any user in
 
 - <b>The Model:</b>
 The Model Object is what manages the data. Data can be created or changed in the Model, and those changes are communicated to the View by the intermediary Controller. User input is sent to the Model from the View via the Controller.
+
+## How it works
+This app has 3 basic CRUD functions using a homemade ORM.
+1. READ all burgers in the database and display them in the View using Handlebars.
+2. UPDATE a specific burger's "devoured" property from "false" to "true" (signifying that the burger has been eaten), and move it into the "eaten" column using Handlebars.
+3. CREATE a new burger using Express to insert a new burger into the mySQL database, then display the new burger in the "now serving" column.
 
 ## Installing the App
 
